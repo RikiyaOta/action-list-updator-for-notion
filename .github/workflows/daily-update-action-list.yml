@@ -22,4 +22,4 @@ jobs:
           ./scripts/get-master-action-list.sh | \
               jq -c '.results[].properties | {category: .category.select.name, action: .action.title[0].text.content, point: .point.number}' | \
               sed -e 's/"/\\"/g' | \
-              xargs -n1 bash -c './scripts/insert-action-into-notion-db.sh $(echo "$0" | jq .category) $(echo "$0" | jq .action) $(echo "$0" | jq .point) $(TZ=Asia/Tokyo date "+%Y-%m-%d")'
+              xargs -n1 bash -c './scripts/insert-action-into-notion-db.sh $(echo "$0" | jq .category) $(echo "$0" | jq .action) $(echo "$0" | jq .point) $(TZ=Asia/Tokyo date "+%Y-%m-%d") > /dev/null && echo "OK!"'

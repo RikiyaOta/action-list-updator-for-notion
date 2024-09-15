@@ -20,7 +20,7 @@ name="$2"
 point="$3"
 date="$4"
 
-curl 'https://api.notion.com/v1/pages' \
+curl -X POST 'https://api.notion.com/v1/pages' \
   --retry 3 \
   --retry-delay 1 \
   -H 'Authorization: Bearer '"$NOTION_API_KEY"'' \
