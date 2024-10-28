@@ -1,9 +1,9 @@
 name: Daily Update Action List
 
-on:
-  schedule:
+# on:
+  # schedule:
     # 日本時間 2:24 に実行
-    - cron: "24 17 * * *"
+    # - cron: "24 17 * * *"
 
 env:
   NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
